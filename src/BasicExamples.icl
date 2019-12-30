@@ -1,4 +1,6 @@
 module BasicExamples
 import iTasks
 
-Start world = doTasks (viewInformation [] "Hello World") world
+Start world = doTasks (helloWorld) world
+
+helloWorld = viewInformation [] "Hello World"
