@@ -1,7 +1,10 @@
 module BasicExamples
 import iTasks
 
-Start world = doTasks (askForName) world
+Start world = doTasks (salute) world
+
+salute = askForName
+         >>= helloWorld
 
 helloWorld name = Title "Salutation" @>> viewInformation [] ("Hello, " +++ name)
 
