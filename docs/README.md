@@ -141,12 +141,6 @@ to that person
 ```
 Rename the hello world function
 
-📄 README.md
-```diff
-- # intro2top
-- task oriented programming with CLEAN is in my opinion the best way to program transactional systems.
-
-```
 📄 src/BasicExamples.icl
 ```diff
 
