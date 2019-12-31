@@ -7,11 +7,17 @@ Start world = doTasks {WorkflowCollection|name="My App Name"
                       ,allowGuests=True
                       ,workflows=basicAPIExamples} world
 
-basicAPIExamples = [workflow "Salutations/Hello Name" "Say hello to anyone name" salute]
+
+basicAPIExamples = [workflow "Salutations/Hello Name" "Say hello to anyone name" salute
+                   ,workflow "Salutations/Hello World" "Say hello the the whole world" helloPlanet]
+                   
 
 salute = askForName
          >>= helloWorld
          >>= return
+
+helloPlanet = helloWorld "World"
+              >>= return
 
 helloWorld name = Title "Salutation" @>> viewInformation [] ("Hello, " +++ name)
 
