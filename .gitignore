@@ -6,6 +6,9 @@
 # Binaries
 *.exe
 *.out
+*.bc
+*.pbc
+
 
 # Project files
 *.prj
