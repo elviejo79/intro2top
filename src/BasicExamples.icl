@@ -9,17 +9,17 @@ Start world = doTasks {WorkflowCollection|name="My App Name"
 
 
 basicAPIExamples = [workflow "Salutations/Hello Name" "Say hello to anyone name" salute
-                   ,workflow "Salutations/Hello World" "Say hello the the whole world" helloPlanet]
+                   ,workflow "Salutations/Hello World" "Say hello the the whole world" helloWorld]
                    
 
 salute = askForName
-         >>= helloWorld
+         >>= hello
          >>= return
 
-helloPlanet = helloWorld "World"
-              >>= return
+helloWorld = hello "World"
+             >>= return
 
-helloWorld name = Title "Salutation" @>> viewInformation [] ("Hello, " +++ name)
+hello name = Title "Salutation" @>> viewInformation [] ("Hello, " +++ name)
 
 askForName :: Task String
 askForName = Hint "What is your name?" @>> enterInformation []
